@@ -1,6 +1,6 @@
 //HTTP 小爬虫
 var https = require('https');
-var cheerio = require('cheerio')
+var cheerio = require('cheerio');  //nodejs的抓取页面模块
 var url = 'https://www.imooc.com/video/7965';
 // var url = 'https://www.imooc.com/video/11548';
 
