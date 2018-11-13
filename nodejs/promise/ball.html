@@ -70,7 +70,7 @@
 
     function promiseAnimate(ball, distance){
         return new Promise(function(resolve, reject){
-            function _animate(){ //球，移动到位置，回调函数
+            function _animate(){
                 setTimeout(function(){
                     var marginLeft = parseInt(ball.style.marginLeft, 10);
                     if(marginLeft === distance){
