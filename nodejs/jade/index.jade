@@ -1,0 +1,48 @@
+doctype html
+<!--[if IE 8]><html class='ie8'><![endif]-->
+<!--[if IE 9]><html class='ie9'><![endif]-->
+<!--[if IE]><!--><html><!--<![endif]-->
+head
+    meta(charset='utf-8')
+    - var course = 'jade'
+    title imooc #{course.toUpperCase()} study  我是#{name}
+body
+    style.
+        body{color: #ff6600;}
+    script.
+        var imoocCourse = 'jade';
+
+    h3 我是#{name}
+    h2 注释
+    h3 单行注释
+    // h3.title(id='title',class='title3') imooc
+    h3 非缓冲注释
+    //- #id.classname
+    h3 块注释
+    //-
+        p.
+            1.123<strong>ABC</strong> 
+            2.456 
+            <span>DEF</span>
+            3.789 
+            <a href='#'>link</a>
+    h1 imooc jade study
+    div asda
+    div.title1.titl2(id='def', class='title3') 测试
+    #id.classname
+        a(href='http://www.imooc.com', title='asdads') link
+    p.
+        1.123<strong>ABC</strong> 
+        2.456 
+        <span>DEF</span>
+        3.789 
+        <a href='#'>link</a>
+    p
+        | 1.123
+        strong ABC
+        | 2.456
+        span DEF
+        | 3.789
+        a(href='#') link
+
+</html>
