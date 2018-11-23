@@ -44,5 +44,63 @@ body
         span DEF
         | 3.789
         a(href='#') link
+    h2 转义
+    - var data = 'text'
+    - var htmlData = '<script>console.log(1);</script><span>script</span>;'
 
+    p #{data}
+    p #{htmlData}
+    p !{htmlData}
+    p= data
+    p= htmlData
+    p!= htmlData
+
+    p \#{htmlData}
+    p \!{htmlData}
+    input(type="text",value="#{data}")
+    input(type="text",value="#{data1}")
+    input(type="text",value=data1)
+
+    h2 流程
+    - var imooc = {course:'jade',level:'high'}
+    - for (var  k in imooc)
+        p= imooc[k]
+    each value, key in imooc
+        p #{key}: #{value}
+    - var courses = ['node', 'jade', 'express']
+    each item in courses
+        p= item
+    - var sections = [{id:1,items:['a','b','c']},{id:2,items:['d','e']}]
+    dl
+        each section in sections
+            dt= section.id
+            each item in section.items
+                dd= item
+    - var n = 0
+    ul
+        while n < 4
+            li= n++
+
+    h3 if else
+    - var isImooc = true
+    - var lessons = ['jade','node']
+    if lessons
+        if lessons.length > 2
+            p more than 2: #{lessons.join(', ')}
+        else if lessons.length > 1
+            p more than 1: #{lessons.join(', ')}
+        else
+            p no lessons
+    h3 unless
+    unless !isImooc
+        p #{lessons.length}
+    h3 case
+    - var name = 'jade'
+    case name
+        when 'node'
+            p Hi node!
+        when 'jade'
+            p Hi jade!
+        default
+            p Hi #{name}
 </html>
